@@ -1,18 +1,18 @@
 <div class="container">
-<% if @current_user%>
-<h1>New Place</h1>
+  <% if @current_user%>
+  <h1>New Place</h1>
 
-<%= form_with :model => @place do |form| %>
-  <p>
-    <%= form.label "name", :class => "form-label" %>
-    <%= form.text_field "name", :class => "form-control" %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+  <%= form_with :model => @place do |form| %>
+    <p>
+      <%= form.label "name", :class => "form-label" %>
+      <%= form.text_field "name", :class => "form-control" %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
 
-<% else %>
-<p>You must be logged in to see this page</p>
-<% end %>
+  <% else %>
+  <p>You must be logged in to see this page</p>
+  <% end %>
 </div>
