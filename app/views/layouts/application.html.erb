@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tacostagram Final</title>
+    <title>Travel Journal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,11 +19,11 @@
   <body>
     <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
       <div class="container-fluid">
-      <a class="navbar-brand" href="/">Tacostagram</a>
+      <a class="navbar-brand" href="/">Home</a>
         <span class="navbar-text">
           <p>
             <% if @current_user %>
-              <p> Hello <%= @current_user["username"] %>!  |  <a href="/">Home</a>  |  <a href="/logout">Logout</a> </p>
+              <p> Logged in as: <%= @current_user["username"] %>  |  <a href="/logout">Logout</a> </p>
             <% else %>
               <a href="/login">Login</a> | <a href="/users/new">Signup</a>
             <% end %>
@@ -33,11 +33,11 @@
     </nav>
 
   <div class="container">
-    <% if flash["notice"] %>
-      <div class="alert alert-primary mt-3">
-        <%= flash["notice"] %>
-      </div>
-    <% end %>
+  <% if flash["notice"] %>
+    <div class="alert alert-primary mt-3">
+      <%= flash["notice"] %>
+    </div>
+  <% end %>
     <!-- <div>
       <a href="/">Home</a>
      <a href="/logout">Logout</a>
