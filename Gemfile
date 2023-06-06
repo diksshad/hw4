@@ -15,6 +15,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "tabulo"
+  gem "web-console"
   gem "sqlite3", "~> 1.4"
 end
 
