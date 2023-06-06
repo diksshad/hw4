@@ -1,7 +1,9 @@
 class PlacesController < ApplicationController
 
   def index
+    if @current_user
     @places = Place.all
+    end
   end
 
   def show
