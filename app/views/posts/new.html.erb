@@ -1,25 +1,31 @@
-<% if @current_user%>
-<h1>New Post</h1>
-
-<%= form_with :model => @post do |form| %>
-  <%= form.hidden_field "place_id" %>
-  <p>
-    <%= form.label "title" %>
-    <%= form.text_field "title" %>
-  </p>
-  <p>
-    <%= form.label "description" %>
-    <%= form.text_field "description" %>
-  </p>
-  <p>
-    <%= form.label "posted_on" %>
-    <%= form.date_field "posted_on" %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
-<% else %>
-<p>You must be logged in to see this page</p>
-<% end %>
+<div class="container">
+  <% if @current_user %>
+    <h1>New Post</h1>
+      <%= form_with :model => @post do |form| %>
+      <%= form.hidden_field "place_id" %>
+        <p>
+          <%= form.label "title", :class => "form-label" %>
+          <%= form.text_field "title", :class => "form-control" %>
+        </p>
+        <p>
+          <%= form.label "description", :class => "form-label" %>
+          <%= form.text_field "description", :class => "form-control" %>
+        </p>
+        <p>
+          <%= form.label "posted_on", :class => "form-label" %>
+          <%= form.date_field "posted_on", :class => "form-control" %>
+        </p>
+        <p>
+            <%= form.label "uploaded_image", :class => "form-label" %>
+            <%= form.file_field "uploaded_image", :accept => "image/png,image/jpg,image/jpeg,image/gif", :class => "form-control" %>
+        </p>
+        <p>
+        <div>
+          <%= form.submit "Submit!", :class => "btn btn-primary" %>
+          </div>
+        </p>
+  <% end %>
+  <% else %>
+    <p>You must be logged in to see this page</p>
+   <% end %>
+</div>
